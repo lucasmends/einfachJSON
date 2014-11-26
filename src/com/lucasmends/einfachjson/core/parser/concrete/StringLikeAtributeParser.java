@@ -5,7 +5,7 @@
  */
 package com.lucasmends.einfachjson.core.parser.concrete;
 
-import com.lucasmends.einfachjson.core.parser.TemplateParser;
+import com.lucasmends.einfachjson.core.parser.TemplateAtributeParser;
 import com.lucasmends.einfachjson.criteria.CriteriaBuilder;
 
 
@@ -13,9 +13,9 @@ import com.lucasmends.einfachjson.criteria.CriteriaBuilder;
  *
  * @author lucas
  */
-public class StringLikeParser extends TemplateParser{
+public class StringLikeAtributeParser extends TemplateAtributeParser{
 
-    public StringLikeParser(){
+    public StringLikeAtributeParser(){
         super();
         this.accepetdType = CriteriaBuilder.stringLikeCriteria();
     }

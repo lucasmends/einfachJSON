@@ -1,7 +1,7 @@
 package com.lucasmends.einfachjson.core.parser.concrete;
 
 
-import com.lucasmends.einfachjson.core.parser.TemplateParser;
+import com.lucasmends.einfachjson.core.parser.TemplateAtributeParser;
 import com.lucasmends.einfachjson.criteria.CriteriaBuilder;
 
 
@@ -24,9 +24,9 @@ import com.lucasmends.einfachjson.criteria.CriteriaBuilder;
  *
  * @author Lucas
  */
-public class PrimitiveParser extends TemplateParser{
+public class PrimitiveAtributeParser extends TemplateAtributeParser{
 
-    public PrimitiveParser(){
+    public PrimitiveAtributeParser(){
         super();
         this.accepetdType = CriteriaBuilder.primitiveCriteria();
     }

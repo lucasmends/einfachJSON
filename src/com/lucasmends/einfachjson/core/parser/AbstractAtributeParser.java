@@ -2,6 +2,7 @@ package com.lucasmends.einfachjson.core.parser;
 
 
 import com.lucasmends.einfachjson.criteria.Criteria;
+import com.mendola.json.notations.Ignore;
 import java.lang.reflect.Field;
 
 
@@ -25,13 +26,13 @@ import java.lang.reflect.Field;
  * 
  * @author Lucas
  */
-public abstract class AbstractParser {
+public abstract class AbstractAtributeParser {
     
     protected Criteria accepetdType;
-    private AbstractParser nextParser;
+    private AbstractAtributeParser nextParser;
     
     
-    public AbstractParser(){
+    public AbstractAtributeParser(){
         nextParser = null;
     }
     
@@ -39,7 +40,7 @@ public abstract class AbstractParser {
      * Setting the next Parser for the chain
      * @param nextParser the next parser
      */
-    public void setNextParser(AbstractParser nextParser){
+    public void setNextParser(AbstractAtributeParser nextParser){
         this.nextParser = nextParser;
     }
     
@@ -50,6 +51,8 @@ public abstract class AbstractParser {
      * @return the JSON notation like "atribute" : value
      */
     public String fieldToString(Field atribute, Object obj){
+        if(atribute.isAnnotationPresent(Ignore.class))
+            return "";
         if(accepetdType.accepts(atribute.getType()))
             try {
                 return getNotationJSON(atribute, obj);

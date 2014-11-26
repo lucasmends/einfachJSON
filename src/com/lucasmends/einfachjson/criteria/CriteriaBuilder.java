@@ -5,6 +5,10 @@
  */
 package com.lucasmends.einfachjson.criteria;
 
+import com.lucasmends.einfachjson.criteria.concrete.CompositeCriteria;
+import com.lucasmends.einfachjson.criteria.concrete.ExtendedCriteria;
+import com.lucasmends.einfachjson.criteria.concrete.WrapperPrimitive;
+
 /**
  *
  * @author lucas
@@ -32,13 +36,7 @@ public class CriteriaBuilder {
                 });
 
         //check if it is Integer, Double,...
-        primtiveCriteria.addCriteria(new Criteria() {
-
-            @Override
-            public boolean accepts(Class<?> type) {
-                return type.isAssignableFrom(Number.class);
-            }
-        });
+        primtiveCriteria.addCriteria(new ExtendedCriteria(Number.class));
         
         primtiveCriteria.addCriteria(new WrapperPrimitive(Boolean.class));
         
@@ -72,12 +70,6 @@ public class CriteriaBuilder {
      * @return the Criteria
      */
     public static Criteria iterableType() {
-        return new Criteria() {
-
-            @Override
-            public boolean accepts(Class<?> type) {
-                return type.isAssignableFrom(Iterable.class);
-            }
-        };
+        return new ExtendedCriteria(Iterable.class);
     }
 }

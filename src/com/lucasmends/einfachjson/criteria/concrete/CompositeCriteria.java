@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lucasmends.einfachjson.criteria;
+package com.lucasmends.einfachjson.criteria.concrete;
 
+import com.lucasmends.einfachjson.criteria.Criteria;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -22,7 +22,7 @@ import java.lang.reflect.Field;
  * Using the template method
  * @author Lucas
  */
-public abstract class TemplateParser extends AbstractParser{
+public abstract class TemplateAtributeParser extends AbstractAtributeParser{
     
 
     @Override

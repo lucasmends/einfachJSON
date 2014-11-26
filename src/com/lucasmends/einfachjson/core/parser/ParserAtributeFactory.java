@@ -12,15 +12,15 @@ import com.lucasmends.einfachjson.core.parser.concrete.*;
  * Creates the parser
  * @author lucas
  */
-public class ParserFactory {
+public class ParserAtributeFactory {
     
     /**
      * Creates the parser for the Object to JSON
      * @return the parser
      */
-    public static AbstractParser createParser(){
-        AbstractParser parser = new StringLikeParser();
-        parser.setNextParser( new PrimitiveParser() );
+    public static AbstractAtributeParser createParser(){
+        AbstractAtributeParser parser = new StringLikeAtributeParser();
+        parser.setNextParser( new PrimitiveAtributeParser() );
         return parser;
     }
 }
