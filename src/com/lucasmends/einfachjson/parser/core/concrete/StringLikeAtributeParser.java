@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lucasmends.einfachjson.core.parser.concrete;
+package com.lucasmends.einfachjson.parser.core.concrete;
 
-import com.lucasmends.einfachjson.core.parser.TemplateAtributeParser;
+import com.lucasmends.einfachjson.parser.core.TemplateAtributeParser;
 import com.lucasmends.einfachjson.criteria.CriteriaBuilder;
 
 

@@ -8,6 +8,7 @@ package com.lucasmends.einfachjson.criteria;
 import com.lucasmends.einfachjson.criteria.concrete.CompositeCriteria;
 import com.lucasmends.einfachjson.criteria.concrete.ExtendedCriteria;
 import com.lucasmends.einfachjson.criteria.concrete.WrapperPrimitive;
+import java.util.Map;
 
 /**
  *
@@ -66,10 +67,18 @@ public class CriteriaBuilder {
     }
 
     /**
-     * Checks if it is a iterable type (List, ArrayList, ...).
+     * Creates a criteria that checks if it is a iterable type (List, ArrayList, ...).
      * @return the Criteria
      */
     public static Criteria iterableType() {
         return new ExtendedCriteria(Iterable.class);
+    }
+    
+    /**
+     * Creates a criteria that checks if it is a Map type (Hashtable, ...).
+     * @return the Criteria
+     */
+    public static Criteria mapType() {
+        return new ExtendedCriteria(Map.class);
     }
 }

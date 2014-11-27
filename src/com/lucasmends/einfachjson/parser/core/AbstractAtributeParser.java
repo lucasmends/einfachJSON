@@ -1,4 +1,4 @@
-package com.lucasmends.einfachjson.core.parser;
+package com.lucasmends.einfachjson.parser.core;
 
 
 import com.lucasmends.einfachjson.criteria.Criteria;
@@ -52,7 +52,7 @@ public abstract class AbstractAtributeParser {
      */
     public String fieldToString(Field atribute, Object obj){
         if(atribute.isAnnotationPresent(Ignore.class))
-            return "";
+            return new String();
         if(accepetdType.accepts(atribute.getType()))
             try {
                 return getNotationJSON(atribute, obj);

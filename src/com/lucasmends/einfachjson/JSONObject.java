@@ -5,7 +5,7 @@
  */
 package com.lucasmends.einfachjson;
 
-import com.lucasmends.einfachjson.core.ParseObjToJSON;
+import com.lucasmends.einfachjson.parser.ParseObjToJSON;
 
 /**
  * This class can transform an Object into a JSON notation and the opposite too.
@@ -20,5 +20,5 @@ public abstract class JSONObject {
      * @param obj the object to be transformed
      * @return the JSON notation of the Object
      */
-    public abstract String onjToJSON(Object obj);
+    public abstract String objToJSON(Object obj);
 }

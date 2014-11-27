@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lucasmends.einfachjson.core;
+package com.lucasmends.einfachjson.parser;
 
 /**
- *
+ * Bridge pattern for the method.
  * @author lucas
  */
 public interface ParseObjToJSON {

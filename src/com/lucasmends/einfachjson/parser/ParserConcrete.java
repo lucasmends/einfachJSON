@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lucasmends.einfachjson.core;
+package com.lucasmends.einfachjson.parser;
 
-import com.lucasmends.einfachjson.core.parser.AbstractAtributeParser;
-import com.lucasmends.einfachjson.core.parser.ParserAtributeFactory;
+import com.lucasmends.einfachjson.parser.core.AbstractAtributeParser;
+import com.lucasmends.einfachjson.parser.core.ParserAtributeFactory;
 import java.lang.reflect.Field;
 
 /**

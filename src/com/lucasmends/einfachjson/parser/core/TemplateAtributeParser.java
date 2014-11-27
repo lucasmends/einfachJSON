@@ -1,4 +1,4 @@
-package com.lucasmends.einfachjson.core.parser;
+package com.lucasmends.einfachjson.parser.core;
 
 
 import java.lang.reflect.Field;
