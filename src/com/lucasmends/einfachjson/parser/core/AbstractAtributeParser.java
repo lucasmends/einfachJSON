@@ -2,7 +2,7 @@ package com.lucasmends.einfachjson.parser.core;
 
 import com.lucasmends.einfachjson.criteria.Criteria;
 import com.lucasmends.einfachjson.parser.ParseObjToJSON;
-import com.mendola.json.notations.Ignore;
+import com.lucasmends.einfachjson.annotations.Ignore;
 import java.lang.reflect.Field;
 
 

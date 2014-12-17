@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mendola.json.notations;
+package com.lucasmends.einfachjson.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
