@@ -6,7 +6,8 @@
 package com.lucasmends.einfachjson.criteria;
 
 import com.lucasmends.einfachjson.criteria.concrete.CompositeCriteria;
-import com.lucasmends.einfachjson.criteria.concrete.ExtendedCriteria;
+import com.lucasmends.einfachjson.criteria.concrete.ExtendCriteria;
+import com.lucasmends.einfachjson.criteria.concrete.InterfaceCriteria;
 import com.lucasmends.einfachjson.criteria.concrete.WrapperPrimitive;
 import java.util.Map;
 
@@ -37,7 +38,7 @@ public class CriteriaBuilder {
                 });
 
         //check if it is Integer, Double,...
-        primtiveCriteria.addCriteria(new ExtendedCriteria(Number.class));
+        primtiveCriteria.addCriteria(new ExtendCriteria(Number.class));
         
         primtiveCriteria.addCriteria(new WrapperPrimitive(Boolean.class));
         
@@ -53,12 +54,7 @@ public class CriteriaBuilder {
         CompositeCriteria stringLike = new CompositeCriteria();
 
         //Criteria for String, StringBuilder, ...
-        stringLike.addCriteria(new Criteria() {
-            @Override
-            public boolean accepts(Class<?> type) {
-                return type.isAssignableFrom(CharSequence.class);
-            }
-        });
+        stringLike.addCriteria(new InterfaceCriteria(CharSequence.class));
 
         stringLike.addCriteria(new WrapperPrimitive(char.class));
         stringLike.addCriteria(new WrapperPrimitive(Character.class));
@@ -71,7 +67,7 @@ public class CriteriaBuilder {
      * @return the Criteria
      */
     public static Criteria iterableType() {
-        return new ExtendedCriteria(Iterable.class);
+        return new InterfaceCriteria(Iterable.class);
     }
     
     /**
@@ -79,6 +75,6 @@ public class CriteriaBuilder {
      * @return the Criteria
      */
     public static Criteria mapType() {
-        return new ExtendedCriteria(Map.class);
+        return new InterfaceCriteria(Map.class);
     }
 }

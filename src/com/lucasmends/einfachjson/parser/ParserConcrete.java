@@ -31,7 +31,7 @@ public class ParserConcrete implements ParseObjToJSON {
 
         Field[] atributes = o.getClass().getDeclaredFields();
         if (atributes.length > 1) {
-            StringBuilder json = new StringBuilder("{ ");
+            StringBuilder json = new StringBuilder("{");
 
             for (Field atribute : atributes) {
                 json.append(atributeParser.fieldToString(atribute, o));
