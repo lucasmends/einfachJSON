@@ -1,6 +1,8 @@
 package com.lucasmends.einfachjson.parser.core;
 
 
+import com.lucasmends.einfachjson.parser.ParseObjToJSON;
+import com.lucasmends.einfachjson.parser.core.concrete.ObjectAtributeParser;
 import java.lang.reflect.Field;
 
 /*
@@ -39,6 +41,14 @@ public abstract class TemplateAtributeParser extends AbstractAtributeParser{
         return notation.toString();
     }
     
+    @Override
+    public void setParser(ParseObjToJSON parser){
+        if(this instanceof ObjectAtributeParser){
+            this.setParserInternal(parser);
+        } else if(this.getNextParser() != null){
+            this.getNextParser().setParser(parser);
+        }
+    }
     
     
     /**

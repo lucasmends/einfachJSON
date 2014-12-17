@@ -5,16 +5,19 @@
  */
 package com.lucasmends.einfachjson.parser;
 
+import com.lucasmends.einfachjson.parser.core.AbstractAtributeParser;
+import com.lucasmends.einfachjson.parser.core.ParserAtributeFactory;
+
 /**
  *
  * @author lucas
  */
 public class ParserFactory {
-    public ParseObjToJSON createParser(){
-        ParseObjToJSON parser = new ParserConcrete();
-        /**
-         * Reflection to set the parser in ObjectIterable and ObjectAtributeParser
-         */
+    public static ParseObjToJSON createParser(){
+        AbstractAtributeParser atributeParser = ParserAtributeFactory.createParser();
+        ParseObjToJSON parser = new ParserConcrete(atributeParser);
+
+        atributeParser.setParser(parser);
         
         return parser;
     }

@@ -13,7 +13,11 @@ import com.lucasmends.einfachjson.parser.ParseObjToJSON;
  */
 public abstract class JSONObject {
     
-    ParseObjToJSON objToJSON;
+    protected ParseObjToJSON objToJSON;
+    
+    public JSONObject( ParseObjToJSON parser){
+        this.objToJSON = parser;
+    }
     
     /**
      * Transform an Object into a JSON notation.

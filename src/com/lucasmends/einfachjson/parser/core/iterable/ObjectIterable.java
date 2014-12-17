@@ -18,11 +18,8 @@ class ObjectIterable extends IterableChain{
     private ParseObjToJSON parser;
     
     
-    /**
-     * Must be accessed by reflection.
-     * @param parser 
-     */
-    public void setParser(ParseObjToJSON parser){
+    @Override
+    protected void setParserInternal(ParseObjToJSON parser){
         this.parser = parser;
     }
     
@@ -35,6 +32,7 @@ class ObjectIterable extends IterableChain{
             }
         };
         this.parser = new NullParser();
+        this.nextIterable = null;
     }
     
     @Override

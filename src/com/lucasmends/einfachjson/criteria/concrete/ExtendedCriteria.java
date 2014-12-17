@@ -8,7 +8,7 @@ package com.lucasmends.einfachjson.criteria.concrete;
 import com.lucasmends.einfachjson.criteria.Criteria;
 
 /**
- *
+ * Criteria for checking if an interface is implemented by a Class.
  * @author lucas
  */
 public final class ExtendedCriteria implements Criteria{
@@ -21,7 +21,10 @@ public final class ExtendedCriteria implements Criteria{
     
     @Override
     public boolean accepts(Class<?> type) {
-        return type.isAssignableFrom(this.type);
+        for(Class<?> intface: type.getInterfaces())
+            if(intface.equals(type))
+                return true;
+        return this.type.equals(type);
     }
     
 }

@@ -35,7 +35,8 @@ public class ObjectAtributeParser extends TemplateAtributeParser{
      *
      * @param parser
      */
-    public void setParser(ParseObjToJSON parser) {
+    @Override
+    protected void setParserInternal(ParseObjToJSON parser) {
         this.parser = parser;
     }
 

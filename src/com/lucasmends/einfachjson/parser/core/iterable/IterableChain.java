@@ -7,6 +7,8 @@ package com.lucasmends.einfachjson.parser.core.iterable;
 
 import com.lucasmends.einfachjson.parser.core.IterableAtributeParser;
 import com.lucasmends.einfachjson.criteria.Criteria;
+import com.lucasmends.einfachjson.parser.ParseObjToJSON;
+import com.lucasmends.einfachjson.parser.core.concrete.ObjectAtributeParser;
 
 /**
  *
@@ -27,6 +29,18 @@ public abstract class IterableChain extends IterableAtributeParser {
 
     }
 
+    @Override
+    public void setParser(ParseObjToJSON parser){
+        if(this instanceof ObjectIterable){
+            this.setParserInternal(parser);
+        } else if(this.nextIterable != null){
+            this.nextIterable.setParser(parser);
+        }
+        if(this.getNextParser() != null)
+            this.getNextParser().setParser(parser);
+    }
+    
+   
     /**
      * For the chain class do the appropriate notation.
      * @param o the object notation

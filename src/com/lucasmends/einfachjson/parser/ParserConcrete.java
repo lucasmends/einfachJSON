@@ -6,7 +6,6 @@
 package com.lucasmends.einfachjson.parser;
 
 import com.lucasmends.einfachjson.parser.core.AbstractAtributeParser;
-import com.lucasmends.einfachjson.parser.core.ParserAtributeFactory;
 import java.lang.reflect.Field;
 
 /**
@@ -17,8 +16,14 @@ public class ParserConcrete implements ParseObjToJSON {
 
     AbstractAtributeParser atributeParser;
 
-    public ParserConcrete() {
-        atributeParser = ParserAtributeFactory.createParser();
+    
+    /**
+     * Implementation of the JSON parser.
+     * @param atributeParser A concrete AbstractAtributeParser, an object that 
+     *                      transforms a field into a JSON notation
+     */
+    public ParserConcrete(AbstractAtributeParser atributeParser) {
+        this.atributeParser = atributeParser;
     }
 
     @Override
